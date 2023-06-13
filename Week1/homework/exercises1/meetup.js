@@ -1,30 +1,33 @@
 const mysql = require('mysql');
 
-// MySQL connection configuration
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'hyfuser',
   password: 'hyfpassword',
 });
 
-// Database name
-const databaseName = 'meetup';
-
-// Drop the database if it exists, then create it
-connection.query(`DROP DATABASE IF EXISTS ${databaseName}`, (error) => {
+connection.connect((error) => {
   if (error) {
     console.log('error', error);
   }
-  connection.query(`CREATE DATABASE ${databaseName}`, (error) => {
+  console.log('Connected to the database');
+});
+
+connection.query(`DROP DATABASE IF EXISTS meetup`, (error) => {
+  if (error) {
+    console.log('error', error);
+  }
+  connection.query(`CREATE DATABASE meetup`, (error) => {
     if (error) {
       console.log('error', error);
     }
-    console.log('Database created');
+    console.log('Database meetup created');
 
-    connection.changeUser({ database: databaseName }, (error) => {
+    connection.query('USE meetup', (error) => {
       if (error) {
         console.log('error', error);
       }
+      console.log('Using meetup database');
       const createInviteeTable = `CREATE TABLE Invitee (
         invitee_no INT AUTO_INCREMENT PRIMARY KEY,
         invitee_name VARCHAR(50),

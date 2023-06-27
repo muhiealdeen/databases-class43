@@ -20,28 +20,27 @@ we can identify the following entities that could be extracted:
 
 ### Member table
 
-member_id (Primary Key)
-member_name
-member_address
+- `member_id` (Primary Key)
+- `member_name`
+- `member_address`
 
 ### Dinner table
 
-dinner_id (Primary Key)
-dinner_date
-venue_code (Foreign Key referencing Venue table)
+- `dinner_id` (Primary Key)
+- `dinner_date`
+- `venue_code` (Foreign Key referencing Venue table)
 
 ### Venue table
 
-`venue_code` (Primary Key)
-`venue_description`
+- `venue_code` (Primary Key)
+- `venue_description`
 
 ### Food table
 
-`food_code` (Primary Key)
-
-`food_description`
+- `food_code` (Primary Key)
+- `food_description`
 
 ### DinnerFood table (to resolve the many-to-many relationship between Dinner and Food)
 
-`dinner_id` (Foreign Key referencing Dinner table)
-`food_code` (Foreign Key referencing Food table)
+- `dinner_id` (Foreign Key referencing Dinner table)
+- `food_code` (Foreign Key referencing Food table)

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "scripts": {
+    "exe-2-transaction": "node exe-2-transaction.js"
+  }
+}

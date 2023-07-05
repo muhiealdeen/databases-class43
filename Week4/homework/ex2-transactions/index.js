@@ -9,9 +9,6 @@ const dbName = 'transfer_money';
 
 async function main() {
   await client.connect();
-  // console.log('Connected successfully to server');
-  // const db = client.db(dbName);
-  // const collection = db.collection('account');
 
   await createCollection(client);
 

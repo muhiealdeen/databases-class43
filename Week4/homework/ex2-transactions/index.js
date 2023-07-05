@@ -15,7 +15,7 @@ async function main() {
 
   await createCollection(client);
 
-  await transferTransaction(101, 102, 10000, 'testing...');
+  await transferTransaction(101, 102, 1000, 'testing...');
 
   return 'Successfull';
 }
